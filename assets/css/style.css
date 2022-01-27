@@ -1,12 +1,13 @@
-/* Font: Karla
-Farbe: #323A45 / #848484 */
-
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    margin: 2% 5%;
     font-family: 'Karla', sans-serif;
 }
 
@@ -19,20 +20,24 @@ h2{
     text-align: end;
 }
 
-
 p{
 color: #848484;
 }
 
 header{
-    margin: 2% 5%;
-    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+header p{
+    color: unset;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 ul{
+    margin-top: 5px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
 }
 
 .headerContainerRight{
@@ -41,26 +46,31 @@ ul{
     gap: 50px;
 }
 
+label{
+    font-size: 1.2rem;
+    display: none;
+}
+
+#toogle{
+    display: none;
+}
+
 a{
+    font-size: 1rem;
     color: unset;
     text-decoration: none;
 }
 
-main{
-    margin-left: 5%;
-    margin-right: 5%;
+a:hover{
+    opacity: 60%;
 }
-
 
 .subLine{
     display: grid;
     grid-template-columns: 50% 50%;
-    margin: 10px 0 30px 0;
-
-    
+    margin: 5px 0 30px 0;
+    line-height: 25px;
 }
-
-
 
 .even{
     display: grid;
@@ -72,26 +82,79 @@ img{
     width: 100%;
 }
 
-
-/* ----------- footer ---------- */
 .infoGrid{
+    margin: 20px 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: 34% 20% 22% 26%;
+}
+
+.infoGrid h1{
+    margin-bottom: 20px;
+}
+
+.infoGrid p{
+    font-size: .9rem;
+    font-weight: 300;
+    color: unset;
+}
+
+span{
+    font-weight: bold;
 }
 
 .colA{
-
+    width: 50%;
 }
 
+.colC{
+    width: 50%;
+}
 
+.colC p:nth-of-type(2){
+    font-style: italic;
+}
 
+.fooEnd{
+    margin-bottom: 20px;
+    font-size: .9rem;
+    font-weight: 300;
+}
 
-@media screen and (max-width: 768px){ 
+@media screen and (max-width: 767px){ 
     
     .even{
         display: grid;
         grid-template-columns: 1fr;
-        gap: 10px;
+    }
+
+    label{
+        display: block;
+        cursor: pointer;
+    }
+
+    .headerContainerRight{
+        display: none;
+    }
+
+    .headerContainerRight a{
+        display: block;
+    }
+
+    #toogle:checked + .headerContainerRight{
+        display: block;
+        margin: 10px 0;
+    }
+
+    header nav{
+        text-align: right;
+    }
+
+    .infoGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .infoGrid h1{
+        margin: 15px 0 2px 0;
     }
 }
+
